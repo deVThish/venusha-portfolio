@@ -7,14 +7,14 @@ const projects = [
     title: "Sentry Gas IoT Application",
     description:
       "An innovative IoT utility built with Flutter for the mobile interface and Arduino backend, featuring remote valve controls, gas usage analytics, automated hazard shutoffs, and real-time Firebase SMS authentication alerts.",
-    tech: ["Flutter", "Arduino", "Firebase", "IoT"],
+    tech: ["Flutter", "Arduino", "Firebase", "IoT", "ESP32"],
     link: "https://github.com/deVThish/PulseAid-Android-Backup",
   },
   {
     title: "Digital Driver's License System",
     description:
       "A modernized digital driving license ecosystem conceptualized for Sri Lanka, incorporating a real-time demerit points infrastructure, digital fine payment processing, and secure QR/NFC officer verification protocols.",
-    tech: ["Next.js", "Node.js", "PostgreSQL", "NFC/QR"],
+    tech: ["Next.js", "PostgreSQL", "QR", "AWS", "AWS S3", "Nest.js", "Docker"],
     link: "https://github.com/deVThish/Auto-Ledger-Backup",
   },
   {
