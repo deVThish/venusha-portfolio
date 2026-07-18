@@ -1,16 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function Hero() {
   return (
     <section className="relative flex min-h-screen flex-col justify-center items-center px-6 text-center bg-[#0d1117] text-white overflow-hidden">
-      {/* Background Glow Effect */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.08)_0%,transparent_70%)]" />
 
       <div className="z-10 max-w-4xl mx-auto space-y-6">
-        {/* Status Badge */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -20,7 +18,6 @@ export default function Hero() {
           <span>Available for Internships</span>
         </motion.div>
 
-        {/* Main Heading */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -30,7 +27,6 @@ export default function Hero() {
           Hi, I&apos;m Venusha Thishan
         </motion.h1>
 
-        {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -40,7 +36,6 @@ export default function Hero() {
           Full Stack Developer & IoT Systems Engineer
         </motion.p>
 
-        {/* Description */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -52,20 +47,31 @@ export default function Hero() {
           robust and efficient solutions.
         </motion.p>
 
-        {/* CTA Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.8 }}
           className="flex flex-wrap justify-center items-center gap-4 pt-4"
         >
-          <a
-            href="#projects"
+          <Link
+            href="/projects"
             className="group flex items-center gap-2 px-6 py-3 text-sm font-medium text-black bg-white rounded-xl hover:bg-slate-200 transition-all duration-300 shadow-lg shadow-white/5"
           >
             View My Work
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </a>
+            <svg
+              className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+              />
+            </svg>
+          </Link>
 
           <a
             href="/cv.pdf"
@@ -77,16 +83,14 @@ export default function Hero() {
           </a>
         </motion.div>
 
-        {/* Social Links */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 1 }}
           className="flex justify-center items-center gap-6 pt-8"
         >
-          {/* GitHub SVG Icon */}
           <a
-            href="https://github.com"
+            href="https://github.com/deVThish"
             target="_blank"
             rel="noopener noreferrer"
             className="text-slate-400 hover:text-white transition-colors duration-200"
@@ -104,9 +108,8 @@ export default function Hero() {
             </svg>
           </a>
 
-          {/* LinkedIn SVG Icon */}
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/venusha-thishan"
             target="_blank"
             rel="noopener noreferrer"
             className="text-slate-400 hover:text-sky-400 transition-colors duration-200"
@@ -125,10 +128,22 @@ export default function Hero() {
           </a>
 
           <a
-            href="mailto:your-email@example.com"
+            href="mailto:devthish17@gmail.com"
             className="text-slate-400 hover:text-rose-400 transition-colors duration-200"
           >
-            <Mail className="w-6 h-6" />
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              />
+            </svg>
           </a>
         </motion.div>
       </div>

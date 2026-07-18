@@ -7,22 +7,22 @@ const projects = [
     title: "Sentry Gas IoT Application",
     description:
       "An innovative IoT utility built with Flutter for the mobile interface and Arduino backend, featuring remote valve controls, gas usage analytics, automated hazard shutoffs, and real-time Firebase SMS authentication alerts.",
-    tech: ["Flutter", "Arduino", "Firebase", "IoT"],
-    link: "#",
+    tech: ["Flutter", "Arduino", "Firebase", "IoT", "ESP32"],
+    link: "https://github.com/deVThish/PulseAid-Android-Backup",
   },
   {
     title: "Digital Driver's License System",
     description:
       "A modernized digital driving license ecosystem conceptualized for Sri Lanka, incorporating a real-time demerit points infrastructure, digital fine payment processing, and secure QR/NFC officer verification protocols.",
-    tech: ["Next.js", "Node.js", "PostgreSQL", "NFC/QR"],
-    link: "#",
+    tech: ["Next.js", "PostgreSQL", "QR", "AWS", "AWS S3", "Nest.js", "Docker"],
+    link: "https://github.com/deVThish/Auto-Ledger-Backup",
   },
   {
     title: "PulseAid Android System",
     description:
       "A robust mobile application engineered to streamline medical support logistics, prioritizing emergency response coordination and secure patient status tracking.",
     tech: ["Android Studio", "Java", "Firebase", "Google Maps API"],
-    link: "#",
+    link: "https://github.com/deVThish/PulseAid-Android-Backup",
   },
 ];
 
@@ -54,8 +54,11 @@ export default function Projects() {
           className="grid grid-cols-1 md:grid-cols-2 gap-8"
         >
           {projects.map((project, index) => (
-            <motion.div
+            <motion.a
               key={index}
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
               variants={{
                 hidden: { opacity: 0, y: 40 },
                 visible: {
@@ -65,7 +68,7 @@ export default function Projects() {
                 },
               }}
               whileHover={{ y: -8 }}
-              className="group relative flex flex-col justify-between p-8 rounded-2xl bg-slate-900/40 border border-slate-800 backdrop-blur-sm transition-all duration-300 hover:border-sky-500/30 hover:bg-slate-900/60"
+              className="group relative flex flex-col justify-between p-8 rounded-2xl bg-slate-900/40 border border-slate-800 backdrop-blur-sm transition-all duration-300 hover:border-sky-500/30 hover:bg-slate-900/60 block"
             >
               <div className="space-y-4">
                 <h3 className="text-xl font-bold text-white group-hover:text-sky-400 transition-colors duration-300">
@@ -89,11 +92,8 @@ export default function Projects() {
                 </div>
 
                 <div className="pt-2">
-                  <a
-                    href={project.link}
-                    className="inline-flex items-center text-sm font-semibold text-slate-300 group-hover:text-sky-400 transition-colors duration-300"
-                  >
-                    View Project Details
+                  <span className="inline-flex items-center text-sm font-semibold text-slate-300 group-hover:text-sky-400 transition-colors duration-300">
+                    View Project Repository
                     <svg
                       className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform"
                       fill="none"
@@ -107,10 +107,10 @@ export default function Projects() {
                         d="M14 5l7 7m0 0l-7 7m7-7H3"
                       />
                     </svg>
-                  </a>
+                  </span>
                 </div>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </motion.div>
       </div>
