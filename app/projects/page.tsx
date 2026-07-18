@@ -3,160 +3,118 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-const allProjects = [
+const projects = [
   {
-    title: "Sentry Gas System",
-    description:
-      "An advanced IoT utility using Flutter and Arduino. Features automatic valve shutdown during leaks, real-time gas level monitoring, usage history tracking, and instant push notifications via Firebase.",
-    tech: ["Flutter", "Arduino", "Firebase", "IoT Systems"],
-    github: "https://github.com/venushathishan",
-    live: "#",
+    title: "Auto Ledger Backup",
+    description: "Automated ledger backup and synchronization utility system.",
+    tech: ["Java", "SQL", "Git"],
+    link: "https://github.com/deVThish/Auto-Ledger-Backup",
   },
   {
-    title: "PulseAid Android Application",
-    description:
-      "A comprehensive healthcare mobile application designed to streamline patient-doctor communication, health tracking, and medical emergency responses.",
-    tech: ["Java", "Android SDK", "Firebase", "APIs"],
-    github: "https://github.com/venushathishan/PulseAid-Android",
-    live: "#",
+    title: "Smart Expense Categorizer",
+    description: "AI-driven smart financial expense categorizer and tracker.",
+    tech: ["Python", "Machine Learning", "SQL"],
+    link: "https://github.com/deVThish/Smart-Expense-Categorizer-Backup",
   },
   {
     title: "Synapse AI Notes Summarize System",
     description:
-      "An intelligent productivity system leveraging AI models to automatically process, clean, and generate concise summaries from long-form text notes and documents.",
-    tech: ["Python", "AI/ML Models", "FastAPI", "TypeScript"],
-    github:
-      "https://github.com/venushathishan/Synapse-AI-Notes-Summarize-System",
-    live: "#",
+      "Intelligent note summarization and analysis platform using AI.",
+    tech: ["Node.js", "React Native", "Firebase"],
+    link: "https://github.com/deVThish/Synapse-AI-Notes-Summarize-System-Backup",
   },
   {
-    title: "Smart Expense Categorizer",
+    title: "HVTM Care AI-Driven Drug Forecasting",
     description:
-      "A finance application utilizing automated categorization algorithms to sort user transactions, track budgets, and generate detailed analytical reports.",
-    tech: ["Node.js", "Express", "SQL", "JavaScript"],
-    github: "https://github.com/venushathishan/Smart-Expense-Categorizer",
-    live: "#",
+      "Predictive analytics and healthcare drug forecasting platform.",
+    tech: ["Python", "Machine Learning", "Data Science"],
+    link: "https://github.com/deVThish/HVTM_Care_AI-Driven_Drug_Forecasting_System-Backup",
+  },
+  {
+    title: "PulseAid Android",
+    description:
+      "Emergency healthcare support and vital tracking mobile application.",
+    tech: ["Flutter", "Firebase", "Mobile Development"],
+    link: "https://github.com/deVThish/PulseAid-Android-Backup",
   },
 ];
 
 export default function ProjectsPage() {
   return (
-    <main className="min-h-screen bg-[#0d1117] text-white py-20 px-6 antialiased">
+    <main className="bg-[#0d1117] min-h-screen pt-24 px-6 text-white">
       <div className="max-w-5xl mx-auto">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-sky-400 transition-colors mb-12 group"
-        >
-          <svg
-            className="w-4 h-4 transform group-hover:-translate-x-1 transition-transform"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
+        <div className="flex items-center gap-4 mb-12">
+          <Link
+            href="/"
+            className="text-sm text-slate-400 hover:text-white flex items-center gap-2 transition-colors"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M10 19l-7-7m0 0l7-7m-7 7h18"
-            />
-          </svg>
-          Back to Home
-        </Link>
-
-        <div className="space-y-4 mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">
-            All Projects
-          </h1>
-          <p className="text-slate-400 max-w-xl">
-            A comprehensive list of my software engineering projects, IoT
-            systems, and academic developments.
-          </p>
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M10 19l-7-7m0 0l7-7m-7 7h18"
+              />
+            </svg>
+            Back Home
+          </Link>
         </div>
 
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: { opacity: 0 },
-            visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
-          }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
-        >
-          {allProjects.map((project, index) => (
-            <motion.div
+        <h1 className="text-4xl font-bold mb-8 bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">
+          Projects Showcase
+        </h1>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {projects.map((project, index) => (
+            <motion.a
               key={index}
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              className="p-6 rounded-2xl bg-slate-900/40 border border-slate-800/80 hover:border-slate-700/50 transition-all duration-300 flex flex-col justify-between"
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              className="p-6 rounded-xl bg-slate-900/40 border border-slate-800 hover:border-sky-500/50 transition-all duration-300 block group"
             >
-              <div>
-                <h3 className="text-xl font-bold text-slate-100 mb-3">
+              <div className="flex justify-between items-start mb-4">
+                <h3 className="text-xl font-semibold group-hover:text-sky-400 transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                  {project.description}
-                </p>
+                <svg
+                  className="w-5 h-5 text-slate-500 group-hover:text-sky-400 transition-colors"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
               </div>
-
-              <div>
-                <div className="flex flex-wrap gap-1.5 mb-6">
-                  {project.tech.map((t, i) => (
-                    <span
-                      key={i}
-                      className="text-xs font-medium px-2.5 py-1 rounded-md bg-slate-800 text-sky-400 border border-slate-700/30"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="flex items-center gap-4 text-sm pt-2 border-t border-slate-800/60">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-slate-400 hover:text-white transition-colors"
+              <p className="text-slate-400 text-sm mb-6 leading-relaxed">
+                {project.description}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {project.tech.map((tech, i) => (
+                  <span
+                    key={i}
+                    className="text-xs font-medium px-2.5 py-1 rounded-md bg-slate-800/60 text-slate-300 border border-slate-700/50"
                   >
-                    <svg
-                      className="w-4 h-4"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-                      <path d="M9 18c-4.51 2-5-2-7-2" />
-                    </svg>
-                    Code
-                  </a>
-                  <a
-                    href={project.live}
-                    className="inline-flex items-center gap-1.5 text-slate-400 hover:text-white transition-colors"
-                  >
-                    <svg
-                      className="w-4 h-4"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                      <polyline points="15 3 21 3 21 9" />
-                      <line x1="10" y1="14" x2="21" y2="3" />
-                    </svg>
-                    Live Demo
-                  </a>
-                </div>
+                    {tech}
+                  </span>
+                ))}
               </div>
-            </motion.div>
+            </motion.a>
           ))}
-        </motion.div>
+        </div>
       </div>
     </main>
   );
