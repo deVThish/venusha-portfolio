@@ -2,11 +2,12 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import TechBackground from "./TechBackground";
 
 export default function Hero() {
   return (
     <section className="relative flex min-h-screen flex-col justify-center items-center px-6 text-center bg-[#0d1117] text-white overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.08)_0%,transparent_70%)]" />
+      <TechBackground />
 
       <div className="z-10 max-w-4xl mx-auto space-y-6">
         <motion.div
